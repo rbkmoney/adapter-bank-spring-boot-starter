@@ -13,21 +13,4 @@ import javax.validation.constraints.NotEmpty;
 @Configuration
 @ConfigurationProperties("adapter")
 @Validated
-public class AdapterProperties {
-
-    @NotEmpty
-    private String url;
-
-    @NotEmpty
-    private String callbackUrl;
-
-    @NotEmpty
-    private String pathCallbackUrl;
-
-    @NotEmpty
-    private String pathRecurrentCallbackUrl;
-
-    @NotEmpty
-    private String tagPrefix;
-
-}
+public class AdapterProperties extends com.rbkmoney.adapter.common.properties.AdapterProperties { }

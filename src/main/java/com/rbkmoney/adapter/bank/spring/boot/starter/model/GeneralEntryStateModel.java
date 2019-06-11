@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Builder
-public class EntryStateModel {
+public class GeneralEntryStateModel {
 
     private OperationModel operationModel;
     private StateModel stateModel;

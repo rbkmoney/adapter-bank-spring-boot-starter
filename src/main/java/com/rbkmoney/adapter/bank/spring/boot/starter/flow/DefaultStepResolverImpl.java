@@ -1,10 +1,9 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.flow;
 
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.*;
-import org.springframework.stereotype.Component;
+import com.rbkmoney.adapter.common.enums.Step;
 
-@Component
-public class DefaultStepResolverImpl implements StepResolver<StateModel, ExitStateModel> {
+public class DefaultStepResolverImpl implements StepResolver<StateModel> {
 
     @Override
     public Step resolveEntry(StateModel stateModel) {
@@ -17,8 +16,6 @@ public class DefaultStepResolverImpl implements StepResolver<StateModel, ExitSta
                 return Step.REFUND;
             case CANCELLED:
                 return Step.CANCEL;
-            case AUTH_RECURRENT:
-                return resolveAuthRecurrent(stateModel);
             default:
                 throw new IllegalStateException("Unknown status of entryState");
         }
@@ -35,17 +32,6 @@ public class DefaultStepResolverImpl implements StepResolver<StateModel, ExitSta
         return Step.AUTH;
     }
 
-    private Step resolveAuthRecurrent(StateModel stateModel) {
-        AdapterContext adapterContext = stateModel.getAdapterContext();
-        if (adapterContext != null
-                && (Step.GENERATE_TOKEN_FINISH_THREE_DS.equals(adapterContext.getNextStep())
-                || Step.GENERATE_TOKEN_CAPTURE.equals(adapterContext.getNextStep())
-                || Step.GENERATE_TOKEN_REFUND.equals(adapterContext.getNextStep()))) {
-            return adapterContext.getNextStep();
-        }
-        return Step.AUTH_RECURRENT;
-    }
-
     private static boolean isNextThreeDs(StateModel stateModel) {
         return stateModel.getAdapterContext() != null && stateModel.getAdapterContext().getNextStep() != null
                 && (Step.FINISH_THREE_DS.equals(stateModel.getAdapterContext().getNextStep())
@@ -53,9 +39,9 @@ public class DefaultStepResolverImpl implements StepResolver<StateModel, ExitSta
     }
 
     @Override
-    public Step resolveExit(ExitStateModel stateModel) {
-        EntryStateModel entryStateModel = stateModel.getEntryStateModel();
-        Step step = entryStateModel.getStateModel().getStep();
+    public Step resolveExit(StateModel stateModel) {
+
+        Step step = stateModel.getStep();
         switch (step) {
             case AUTH_RECURRENT:
                 if (Step.FINISH_THREE_DS.equals(stateModel.getNextStep())) {

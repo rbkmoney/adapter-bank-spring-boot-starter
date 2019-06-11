@@ -1,14 +1,12 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.flow;
 
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.EntryStateModel;
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.ExitStateModel;
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.StateModel;
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.Step;
+import com.rbkmoney.adapter.common.enums.Step;
 
-public interface StepResolver<T extends StateModel, R extends ExitStateModel>  {
+public interface StepResolver<T extends StateModel>  {
 
     Step resolveEntry(T stateModel);
 
-    Step resolveExit(R stateModel);
+    Step resolveExit(T stateModel);
 
 }

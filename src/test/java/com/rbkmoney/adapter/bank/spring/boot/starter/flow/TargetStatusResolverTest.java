@@ -1,7 +1,7 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.flow;
 
-import com.rbkmoney.adapter.bank.spring.boot.starter.constants.TargetStatus;
-import com.rbkmoney.adapter.bank.spring.boot.starter.exception.UnknownTargetStatusException;
+import com.rbkmoney.adapter.common.enums.TargetStatus;
+import com.rbkmoney.adapter.common.exception.UnknownTargetStatusException;
 import com.rbkmoney.damsel.domain.*;
 import org.junit.Assert;
 import org.junit.Test;

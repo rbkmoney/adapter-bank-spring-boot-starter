@@ -13,15 +13,4 @@ import javax.validation.constraints.NotNull;
 @Validated
 @Getter
 @Setter
-public class TimerProperties {
-
-    @NotNull
-    private int redirectTimeout;
-
-    @NotNull
-    private int maxTimePolling;
-
-    @NotNull
-    private int pollingDelay;
-
-}
+public class TimerProperties extends com.rbkmoney.adapter.common.properties.TimerProperties { }
