@@ -25,15 +25,6 @@ public class AppConfig {
     @Value("${error-mapping.patternReason:\"'%s' - '%s'\"}")
     private String errorMappingPattern;
 
-    @Value("${restTemplate.networkTimeout}")
-    private int networkTimeout;
-
-    @Value("${server.rest.port}")
-    private int restPort;
-
-    @Value("/${server.rest.endpoint}/")
-    private String restEndpoint;
-
     @Bean
     public ErrorMapping errorMapping() throws IOException {
         return new SimpleErrorMapping(errorMappingFilePath, errorMappingPattern).getErrorMapping();
@@ -44,23 +35,5 @@ public class AppConfig {
         return new SimpleObjectMapper().getSimpleObjectMapper();
     }
 
-    @Bean
-    public FilterRegistrationBean externalPortRestrictingFilter() {
-        return new NetworkFilterComponent().externalPortRestrictingFilter(restPort, restEndpoint);
-    }
-
-    @Bean
-    public FilterRegistrationBean woodyFilter() {
-        return new NetworkFilterComponent().woodyFilter(restPort, restEndpoint);
-    }
-
-    @Bean
-    public ServletWebServerFactory servletContainer() {
-        TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
-        Connector connector = new Connector();
-        connector.setPort(restPort);
-        tomcat.addAdditionalTomcatConnectors(connector);
-        return tomcat;
-    }
 
 }

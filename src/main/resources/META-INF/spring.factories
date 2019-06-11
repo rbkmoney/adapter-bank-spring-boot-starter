@@ -1,9 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 com.rbkmoney.adapter.bank.spring.boot.starter.config.AppConfig,\
 com.rbkmoney.adapter.bank.spring.boot.starter.config.SerializerConfig,\
-com.rbkmoney.adapter.bank.spring.boot.starter.config.properties.TimerProperties,\
-com.rbkmoney.adapter.bank.spring.boot.starter.config.properties.AdapterProperties,\
-com.rbkmoney.adapter.bank.spring.boot.starter.flow.TargetStatusResolver,\
-com.rbkmoney.adapter.bank.spring.boot.starter.serializer.RecurrentContextSerializer,\
-com.rbkmoney.adapter.bank.spring.boot.starter.controller.AdapterController,\
+com.rbkmoney.adapter.bank.spring.boot.starter.controller.AdapterControllerDecorator,\
 com.rbkmoney.adapter.bank.spring.boot.starter.service.ThreeDsPropertiesServiceImpl

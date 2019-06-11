@@ -1,5 +1,6 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.controller;
 
+import com.rbkmoney.adapter.common.controller.AdapterController;
 import com.rbkmoney.adapter.common.serializer.CallbackSerializer;
 import com.rbkmoney.adapter.helpers.hellgate.HellgateAdapterClient;
 import lombok.extern.slf4j.Slf4j;
@@ -15,22 +16,24 @@ import java.io.IOException;
 @Slf4j
 @RestController
 @RequestMapping("/${server.rest.endpoint}")
-public class AdapterController extends com.rbkmoney.adapter.common.controller.AdapterController {
+public class AdapterControllerDecorator {
 
-    public AdapterController(HellgateAdapterClient hgClient, CallbackSerializer callbackSerializer) {
-        super(hgClient, callbackSerializer);
+    private AdapterController adapterController;
+
+    public AdapterControllerDecorator(HellgateAdapterClient hgClient, CallbackSerializer callbackSerializer) {
+        adapterController = new AdapterController(hgClient, callbackSerializer);
     }
 
     @PostMapping(value = "term_url")
     public String receivePaymentIncomingParameters(HttpServletRequest servletRequest,
                                                    HttpServletResponse servletResponse) throws IOException {
-        return super.receivePaymentIncomingParameters(servletRequest, servletResponse);
+        return adapterController.receivePaymentIncomingParameters(servletRequest, servletResponse);
     }
 
     @PostMapping(value = "rec_term_url")
     public String receiveRecurrentIncomingParameters(HttpServletRequest servletRequest,
                                                      HttpServletResponse servletResponse) throws IOException {
-        return super.receiveRecurrentIncomingParameters(servletRequest, servletResponse);
+        return adapterController.receiveRecurrentIncomingParameters(servletRequest, servletResponse);
     }
 
 }

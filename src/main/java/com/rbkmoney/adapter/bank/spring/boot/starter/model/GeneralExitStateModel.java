@@ -20,10 +20,7 @@ public class GeneralExitStateModel {
     private String errorMessage;
     private AdapterContext adapterContext;
     private GeneralEntryStateModel generalEntryStateModel;
-    private String paReq;
-    private String md;
-    private String acsUrl;
-    private String trxId;
+
     private Map<String, String> trxExtra;
 
 }
