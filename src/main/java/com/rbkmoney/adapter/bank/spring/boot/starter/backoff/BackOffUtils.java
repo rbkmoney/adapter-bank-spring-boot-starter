@@ -33,12 +33,12 @@ public class BackOffUtils {
             Map<String, String> options) {
         final Long currentLocalTime = Instant.now().toEpochMilli();
 
-        Long startTime = adapterContext.getStartDateTimePolling() != null
-                ? adapterContext.getStartDateTimePolling().toEpochMilli()
+        Long startTime = adapterContext.getPollingInfo().getStartDateTimePolling() != null
+                ? adapterContext.getPollingInfo().getStartDateTimePolling().toEpochMilli()
                 : currentLocalTime;
-        Integer exponential = TimeOptionsExtractors.extractExponent(options, DEFAULT_EXPONENTIAL);
-        Integer defaultInitialExponential = TimeOptionsExtractors.extractDefaultInitialExponential(options, DEFAULT_INITIAL_EXPONENTIAL);
-        Integer maxTimeBackOff = TimeOptionsExtractors.extractMaxTimeBackOff(options, DEFAULT_MAX_TIME_BACK_OFF);
+        Integer exponential = TimeOptionsExtractors.extractExponent(options, DEFAULT_MUTIPLIER);
+        Integer defaultInitialExponential = TimeOptionsExtractors.extractDefaultInitialExponential(options, DEFAULT_INITIAL_INTERVAL);
+        Integer maxTimeBackOff = TimeOptionsExtractors.extractMaxTimeBackOff(options, DEFAULT_MAX_INTERVAL);
 
         return new ExponentialBackOff(
                 startTime,
