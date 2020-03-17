@@ -6,18 +6,19 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.rbkmoney</groupId>
     <artifactId>adapter-bank-spring-boot-starter</artifactId>
-    <version>0.0.11</version>
+    <version>0.0.12</version>
     <packaging>jar</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>8</java.version>
         <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
-        <damsel-utils.version>2.1.10</damsel-utils.version>
-        <damsel.version>1.363-3074af1</damsel.version>
+        <damsel.version>1.391-8fe5f98</damsel.version>
+        <cds-proto.version>1.56-f6ac992</cds-proto.version>
         <serializer.version>0.6.7</serializer.version>
-        <hellgate-adapter-client.version>2.1.10</hellgate-adapter-client.version>
-        <adapter-common-lib.version>0.0.14</adapter-common-lib.version>
+        <adapter-common-lib.version>0.0.19</adapter-common-lib.version>
+        <adapter-thrift-lib.version>1.0.1</adapter-thrift-lib.version>
+        <adapter-client-lib.version>2.1.20</adapter-client-lib.version>
     </properties>
 
     <dependencies>
@@ -87,8 +88,19 @@
         </dependency>
         <dependency>
             <groupId>com.rbkmoney</groupId>
+            <artifactId>cds-proto</artifactId>
+            <version>${cds-proto.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.rbkmoney.adapter-thrift-lib</groupId>
+            <artifactId>cds-utils</artifactId>
+            <version>${adapter-thrift-lib.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.rbkmoney.adapter-thrift-lib</groupId>
             <artifactId>damsel-utils</artifactId>
-            <version>${damsel-utils.version}</version>
+            <version>${adapter-thrift-lib.version}</version>
         </dependency>
         <dependency>
             <groupId>com.rbkmoney.geck</groupId>
@@ -96,9 +108,9 @@
             <version>${serializer.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.rbkmoney.proxy-libs</groupId>
+            <groupId>com.rbkmoney.adapter-client-lib</groupId>
             <artifactId>hellgate-adapter-client</artifactId>
-            <version>${hellgate-adapter-client.version}</version>
+            <version>${adapter-client-lib.version}</version>
         </dependency>
         <dependency>
             <groupId>com.rbkmoney</groupId>

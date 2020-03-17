@@ -1,9 +1,9 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.utils;
 
 import com.rbkmoney.adapter.common.utils.converter.CardDataUtils;
-import com.rbkmoney.damsel.cds.AuthData;
-import com.rbkmoney.damsel.cds.CardSecurityCode;
-import com.rbkmoney.damsel.cds.SessionData;
+import com.rbkmoney.cds.storage.AuthData;
+import com.rbkmoney.cds.storage.CardSecurityCode;
+import com.rbkmoney.cds.storage.SessionData;
 import org.junit.Assert;
 import org.junit.Test;
 
