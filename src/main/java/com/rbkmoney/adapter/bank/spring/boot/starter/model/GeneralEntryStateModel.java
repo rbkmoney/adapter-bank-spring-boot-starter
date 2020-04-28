@@ -47,6 +47,7 @@ public class GeneralEntryStateModel {
     private String recToken;
     private boolean makeRecurrent;
 
+    private String tokenProvider;
     private String cryptogram;
     private String eci;
 
