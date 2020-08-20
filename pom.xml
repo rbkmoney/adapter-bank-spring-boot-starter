@@ -26,6 +26,7 @@
         <damsel.version>1.439-b18f037</damsel.version>
         <cds-proto.version>1.62-07f2b0f</cds-proto.version>
 
+        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
         <woody.version>[1.1.21,)</woody.version>
         <geck.version>[0.6.11,)</geck.version>
         <lombok.version>1.18.4</lombok.version>
@@ -66,20 +67,24 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot</artifactId>
+            <version>${spring-boot.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring-boot.version}</version>
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
             <scope>provided</scope>
         </dependency>
 
