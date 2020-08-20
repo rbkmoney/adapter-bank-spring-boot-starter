@@ -1,5 +1,7 @@
 ### adapter-bank-spring-boot-starter
 
+[![Build Status](http://ci.rbkmoney.com/buildStatus/icon?job=rbkmoney_private/adapter-bank-spring-boot-starter/master)](http://ci.rbkmoney.com/job/rbkmoney_private/job/adapter-bank-spring-boot-starter/job/master/)
+
 **Adapter-bank-spring-boot-starter** - это подключаемый Spring Boot модуль для стандартных 
 компонентов proxy-алаптеров. 
 
