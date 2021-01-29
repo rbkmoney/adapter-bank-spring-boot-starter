@@ -6,14 +6,37 @@
 
     <parent>
         <groupId>com.rbkmoney</groupId>
-        <artifactId>parent</artifactId>
-        <version>1.0.5</version>
+        <artifactId>library-parent-pom</artifactId>
+        <version>1.0.1</version>
         <relativePath/>
     </parent>
 
     <artifactId>adapter-bank-spring-boot-starter</artifactId>
-    <version>0.0.17</version>
+    <version>0.0.18</version>
     <packaging>jar</packaging>
+    <name>adapter-bank-spring-boot-starter</name>
+    <description>Spring boot starter for bank adapter</description>
+    <url>https://github.com/rbkmoney/adapter-bank-spring-boot-starter</url>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <organization>RBK.money</organization>
+            <organizationUrl>https://rbk.money</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/rbkmoney/adapter-bank-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:ssh://github.com/rbkmoney/adapter-bank-spring-boot-starter.git</developerConnection>
+        <url>https://github.com/rbkmoney/adapter-bank-spring-boot-starter/tree/master</url>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

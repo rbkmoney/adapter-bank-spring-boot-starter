@@ -4,14 +4,13 @@ import com.rbkmoney.adapter.common.controller.AdapterController;
 import com.rbkmoney.adapter.common.state.deserializer.CallbackDeserializer;
 import com.rbkmoney.adapter.common.state.serializer.CallbackSerializer;
 import com.rbkmoney.adapter.helpers.hellgate.HellgateAdapterClient;
+import java.io.IOException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @Slf4j
 @RestController

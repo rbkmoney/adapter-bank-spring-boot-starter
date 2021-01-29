@@ -1,6 +1,7 @@
 package com.rbkmoney.adapter.bank.spring.boot.starter.flow;
 
-import com.rbkmoney.adapter.bank.spring.boot.starter.model.*;
+import com.rbkmoney.adapter.bank.spring.boot.starter.model.GeneralEntryStateModel;
+import com.rbkmoney.adapter.bank.spring.boot.starter.model.GeneralExitStateModel;
 import com.rbkmoney.adapter.common.enums.Step;
 
 public class DefaultStepResolverImpl implements StepResolver<GeneralEntryStateModel, GeneralExitStateModel> {

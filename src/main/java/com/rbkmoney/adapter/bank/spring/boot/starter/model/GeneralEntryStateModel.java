@@ -2,9 +2,12 @@ package com.rbkmoney.adapter.bank.spring.boot.starter.model;
 
 import com.rbkmoney.adapter.common.enums.TargetStatus;
 import com.rbkmoney.adapter.common.model.AdapterContext;
-import lombok.*;
-
 import java.util.Map;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @Builder

@@ -4,7 +4,7 @@ import com.rbkmoney.adapter.bank.spring.boot.starter.model.GeneralEntryStateMode
 import com.rbkmoney.adapter.bank.spring.boot.starter.model.GeneralExitStateModel;
 import com.rbkmoney.adapter.common.enums.Step;
 
-public interface StepResolver<T extends GeneralEntryStateModel, R extends GeneralExitStateModel>  {
+public interface StepResolver<T extends GeneralEntryStateModel, R extends GeneralExitStateModel> {
 
     Step resolveEntry(T entryStateModel);
 

@@ -5,11 +5,10 @@ import com.rbkmoney.adapter.common.constants.ThreeDsFields;
 import com.rbkmoney.adapter.common.model.AdapterContext;
 import com.rbkmoney.adapter.common.properties.CommonAdapterProperties;
 import com.rbkmoney.adapter.common.utils.converter.RedirectUtils;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 import java.util.Map;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
