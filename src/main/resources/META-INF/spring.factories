@@ -3,4 +3,5 @@ com.rbkmoney.adapter.bank.spring.boot.starter.configuration.AppConfiguration,\
 com.rbkmoney.adapter.bank.spring.boot.starter.configuration.SerializerConfiguration,\
 com.rbkmoney.adapter.bank.spring.boot.starter.configuration.DeserializerConfiguration,\
 com.rbkmoney.adapter.bank.spring.boot.starter.controller.AdapterControllerDecorator,\
-com.rbkmoney.adapter.bank.spring.boot.starter.service.ThreeDsPropertiesServiceImpl
+com.rbkmoney.adapter.bank.spring.boot.starter.service.ThreeDsPropertiesServiceImpl,\
+com.rbkmoney.adapter.bank.spring.boot.starter.logging.aspect.RequestLoggingAspect
