@@ -46,7 +46,7 @@ public class RequestLoggingAspect {
             RequestMethod method,
             String endpoint) throws Throwable {
         if (joinPoint.getArgs().length != 1) {
-            log.debug("Unable to log request. Unsupported method signature with more then one argument: {}",
+            log.debug("Unable to log request. Unsupported method signature with more than one argument: {}",
                     joinPoint.getArgs());
             return joinPoint.proceed();
         }
